@@ -1,0 +1,22 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Buyers\Domain\Entity\Buyer" table="buyers_buyer">
+        <id name="id" type="string" length="26">
+            <generator strategy="NONE"/>
+        </id>
+        <many-to-one
+                field="lot"
+                target-entity="App\Lots\Domain\Entity\Lot"
+                invesed-by="lots_lot">
+        </many-to-one>
+        <many-to-one
+                field="user"
+                target-entity="App\Users\Domain\Entity\User"
+                invesed-by="users_user">
+        </many-to-one>
+    </entity>
+
+</doctrine-mapping>

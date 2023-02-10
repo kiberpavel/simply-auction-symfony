@@ -1,0 +1,25 @@
+kernel:
+    resource: ../src/Shared/Infrastructure/Kernel.php
+    type: annotation
+
+users:
+    resource: ../src/Users/Infrastructure/Controller/
+    type: annotation
+
+api_refresh_token:
+    path: /api/auth/token/refresh
+
+api_login_check:
+    path: /api/login
+
+lots:
+    resource: ../src/Lots/Infrastructure/Controller/
+    type: annotation
+
+buyers:
+    resource: ../src/Buyers/Infrastructure/Controller/
+    type: annotation
+
+orders:
+    resource: ../src/Orders/Infrastructure/Controller/
+    type: annotation

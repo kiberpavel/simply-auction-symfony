@@ -1,0 +1,23 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Lots\Domain\Entity\Lot" table="lots_lot">
+        <id name="id" type="string" length="26">
+            <generator strategy="NONE"/>
+        </id>
+        <many-to-one
+                field="user"
+                target-entity="App\Users\Domain\Entity\User"
+                invesed-by="films_film">
+        </many-to-one>
+        <field name="status" type="string"/>
+        <field name="short_name" type="string" />
+        <field name="price" type="float" />
+        <field name="description" type="string" />
+        <field name="image_url" type="string" />
+        <field name="end_trade_time" type="datetime_immutable" />
+    </entity>
+
+</doctrine-mapping>

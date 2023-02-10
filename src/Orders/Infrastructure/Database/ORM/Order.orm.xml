@@ -1,0 +1,19 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Orders\Domain\Entity\Order" table="orders_order">
+        <id name="id" type="string" length="26">
+            <generator strategy="NONE"/>
+        </id>
+        <field name="status" type="string"/>
+        <field name="end_time_for_pay" type="datetime_immutable" />
+        <one-to-one
+                field="buyer"
+                target-entity="App\Buyers\Domain\Entity\Buyer"
+                invesed-by="buyers_buyer">
+        </one-to-one>
+    </entity>
+
+</doctrine-mapping>
